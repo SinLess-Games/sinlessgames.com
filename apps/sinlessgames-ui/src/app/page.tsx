@@ -1,7 +1,6 @@
 "use client"
 import { HomeCard } from "../components/Home/card"
 import { Grid } from "@mui/material"
-import ColoredLine from "../components/reusable-components/coloredLine"
 
 const IntroCard = {
   title: "Welcome to SinLess Games!",
