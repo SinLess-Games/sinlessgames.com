@@ -8,13 +8,18 @@ import { ResponsiveAppBar } from "@sinlessgamesllc/react-components"
 import { pages } from "../variables/MainNavbar/pages"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sinlessgamesllc.com/"),
-  title: "SinLess Games",
+  metadataBase: new URL("https://sinlessgames.com/"),
+  title: "SinLess Games | Create Worlds. Defy Limits.",
   description:
     "SinLess Games is a game development studio that creates highly immersive games with well-thought-out storylines and great graphics.",
   generator: "Next.js",
   creator: "Timothy A. Pierce",
   publisher: "SinLess Games LLC",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/images/sinless-games-mark.webp"
+  },
   formatDetection: {
     email: true,
     telephone: true,
@@ -23,9 +28,7 @@ export const metadata: Metadata = {
 }
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Use CDN URL for the logo
-  const logoUrl =
-    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/logos/sinless-games/logo_no_background.webp"
+  const logoUrl = "/images/sinless-games-mark.webp"
   const backgroundUrl =
     "https://cdn.sinlessgamesllc.com/Sinless-Games/images/galaxy_planets.webp"
 

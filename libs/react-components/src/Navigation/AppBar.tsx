@@ -62,6 +62,7 @@ export const ResponsiveAppBar: React.FC<AppBarProps> = ({ pages, logo }) => {
                   noWrap
                   component="a"
                   href="/"
+                  aria-label="SinLess Games home"
                   sx={{
                     mr: 2,
                     fontFamily: "monospace",
@@ -73,9 +74,10 @@ export const ResponsiveAppBar: React.FC<AppBarProps> = ({ pages, logo }) => {
                 >
                   <Image
                     src={logo}
-                    alt="Sinless Games LLC"
-                    width={50}
-                    height={40}
+                    alt="SinLess Games emblem"
+                    width={54}
+                    height={50}
+                    style={{ objectFit: "contain" }}
                   />
                 </Typography>
                 {/** Title */}

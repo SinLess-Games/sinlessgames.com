@@ -58,7 +58,13 @@ export const HomeCard: React.FC<CardProps> = ({
               alignItems: "center"
             }}
           >
-            <Image src={image} alt={title} width={600} height={500} />
+            <Image
+              src={image}
+              alt={title}
+              width={600}
+              height={400}
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
         </Grid>
         {/** Image 2 Medium */}
@@ -70,13 +76,25 @@ export const HomeCard: React.FC<CardProps> = ({
           }}
         >
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Image src={image} alt={title} width={350} height={250} />
+            <Image
+              src={image}
+              alt={title}
+              width={350}
+              height={233}
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
         </Grid>
         {/** Image 3 small and smaller */}
         <Grid item sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}>
           <Box>
-            <Image src={image} alt={title} width={350} height={250} />
+            <Image
+              src={image}
+              alt={title}
+              width={350}
+              height={233}
+              style={{ width: "100%", height: "auto" }}
+            />
           </Box>
         </Grid>
 

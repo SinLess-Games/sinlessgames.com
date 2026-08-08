@@ -1,7 +1,6 @@
 "use client"
 import { HomeCard } from "../components/Home/card"
 import { Grid } from "@mui/material"
-import ColoredLine from "../components/reusable-components/coloredLine"
 
 const IntroCard = {
   title: "Welcome to SinLess Games!",
@@ -12,10 +11,9 @@ const IntroCard = {
     experiences. They offer services, including game design, development,
     testing, hosting, modding, and custom gaming PC builds. SinLess Games
     also runs a Minecraft server called Mobius Infernium, offering a
-    unique and immersive gameplay experience. Join them on a journey where
-    game immersion ranks supreme and dreams come true!!!`,
-  image:
-    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/logos/sinless-games/logo_no_background.webp"
+    unique and immersive gameplay experience. Create worlds. Defy limits.
+    Join us on a journey where game immersion ranks supreme and dreams come true!!!`,
+  image: "/images/sinless-games-logo.webp"
 }
 
 export default function Index() {
