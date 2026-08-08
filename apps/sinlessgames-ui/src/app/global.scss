@@ -23,5 +23,11 @@
 }
 
 body {
-  background-color: transparent;
+  min-height: 100vh;
+  background-color: #050505;
+  color: #f4f1e8;
+}
+
+* {
+  box-sizing: border-box;
 }
