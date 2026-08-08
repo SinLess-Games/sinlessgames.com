@@ -1,26 +1,22 @@
-import { Box, Typography, Grid } from "@mui/material";
-import Card from "../../components/reusable-components/card";
+import { Box, Typography, Grid } from "@mui/material"
+import Card from "../../components/reusable-components/card"
 import {
   EmailCard,
   DiscordCard,
-  GithubCard,
-} from "../../variables/Contact/cards";
+  GithubCard
+} from "../../variables/Contact/cards"
 
 // Define a type for your contact cards
 interface IContactCard {
-  title: string;
-  description: string;
-  link: string;
-  buttonText: string;
+  title: string
+  description: string
+  link: string
+  buttonText: string
 }
 
 export default function Contact() {
   // Cast your imported cards to the new interface
-  const contactCards: IContactCard[] = [
-    EmailCard,
-    DiscordCard,
-    GithubCard,
-  ];
+  const contactCards: IContactCard[] = [EmailCard, DiscordCard, GithubCard]
 
   return (
     <Box
@@ -30,7 +26,7 @@ export default function Contact() {
         flexDirection: "column",
         alignItems: "center",
         borderRadius: 2,
-        backgroundColor: "rgba(0, 0, 0, 0.25)",
+        backgroundColor: "rgba(0, 0, 0, 0.25)"
       }}
     >
       <Typography
@@ -45,7 +41,7 @@ export default function Contact() {
           borderRadius: 50,
           py: 0.5,
           px: 1,
-          color: "#daa520",
+          color: "#daa520"
         }}
       >
         Contact Us
@@ -61,7 +57,7 @@ export default function Contact() {
           alignItems: "center",
           borderRadius: 2,
           backgroundColor: "rgba(0, 0, 0, 0.40)",
-          border: "0.05rem solid #daa520",
+          border: "0.05rem solid #daa520"
         }}
       >
         <Typography
@@ -73,7 +69,7 @@ export default function Contact() {
             fontSize: "5rem",
             color: "#daa520",
             p: 2,
-            textAlign: "center",
+            textAlign: "center"
           }}
         >
           <strong>Welcome to Our Community!</strong>
@@ -87,13 +83,17 @@ export default function Contact() {
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif',
+            fontFamily: '"Mate SC", serif'
           }}
         >
-          We&apos;re incredibly excited to welcome you into our <strong>SinLess Games family</strong>! Whether you&apos;re a gamer, a developer, or 
-          simply someone who loves immersive experiences, we&apos;re thrilled to have you here. If you&apos;re interested in 
-          <strong>joining our team</strong>, we&apos;re always on the lookout for talented individuals—developers, designers, or passionate gamers. 
-          Reach out via <strong>Discord</strong> or <strong>Email</strong> to learn more.
+          We&apos;re incredibly excited to welcome you into our{" "}
+          <strong>SinLess Games family</strong>! Whether you&apos;re a gamer, a
+          developer, or simply someone who loves immersive experiences,
+          we&apos;re thrilled to have you here. If you&apos;re interested in
+          <strong>joining our team</strong>, we&apos;re always on the lookout
+          for talented individuals—developers, designers, or passionate gamers.
+          Reach out via <strong>Discord</strong> or <strong>Email</strong> to
+          learn more.
         </Typography>
 
         <Typography
@@ -104,11 +104,14 @@ export default function Contact() {
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif',
+            fontFamily: '"Mate SC", serif'
           }}
         >
-          And if you&apos;re here to enjoy our games, we&apos;re glad to have you! Follow us on <strong>GitHub</strong> to stay updated on projects, 
-          join us on <strong>Discord</strong> to chat with fellow community members, or give us a call if you have questions—we&apos;re here to help.
+          And if you&apos;re here to enjoy our games, we&apos;re glad to have
+          you! Follow us on <strong>GitHub</strong> to stay updated on projects,
+          join us on <strong>Discord</strong> to chat with fellow community
+          members, or give us a call if you have questions—we&apos;re here to
+          help.
         </Typography>
 
         <Typography
@@ -119,10 +122,11 @@ export default function Contact() {
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif',
+            fontFamily: '"Mate SC", serif'
           }}
         >
-          Once again, <strong>welcome</strong>—we can&apos;t wait to embark on this journey together!
+          Once again, <strong>welcome</strong>—we can&apos;t wait to embark on
+          this journey together!
         </Typography>
 
         <Grid
@@ -146,5 +150,5 @@ export default function Contact() {
         </Grid>
       </Box>
     </Box>
-  );
+  )
 }

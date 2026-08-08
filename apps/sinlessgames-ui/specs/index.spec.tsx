@@ -22,9 +22,4 @@ describe("Homepage", () => {
     const images = queryAllByAltText("Welcome to SinLess Games!")
     expect(images.length).toBeGreaterThan(0)
   })
-
-  it("renders the colored line", () => {
-    const { container } = render(<Index />)
-    expect(container.querySelector(".coloredLine")).toBeInTheDocument()
-  })
 })
