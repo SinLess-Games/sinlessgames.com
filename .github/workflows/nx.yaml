@@ -1,12 +1,10 @@
 name: CI
+
 on:
   push:
-    branches:
-      # Change this if your primary branch is not main
-      - master
+    branches: [master]
   pull_request:
 
-# Needed for nx-set-shas when run on the main branch
 permissions:
   actions: read
   contents: read
@@ -14,20 +12,33 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    env:
+      NX_DAEMON: false
+      NX_ISOLATE_PLUGINS: false
+      NX_NO_CLOUD: true
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      # This line enables distribution
-      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
-      # - run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="e2e-ci"
-      - run: npm ci
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint test build e2e-ci
+      - name: Check formatting
+        run: pnpm exec prettier --check .
+
+      - name: Lint, test, and build affected projects
+        run: pnpm exec nx affected -t lint test build --parallel=3
