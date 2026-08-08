@@ -13,6 +13,22 @@
         "outputPath": "dist/apps/sinlessgames-ui"
       }
     },
+    "start": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "cwd": "dist/apps/sinlessgames-ui",
+        "command": "next start"
+      }
+    },
+    "serve-static": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "options": {
+        "cwd": "dist/apps/sinlessgames-ui",
+        "command": "next start"
+      }
+    },
     "container": {
       "executor": "@nx-tools/nx-container:build",
       "dependsOn": ["build"],

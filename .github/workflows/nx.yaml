@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    env:
+      NX_DAEMON: false
+      NX_ISOLATE_PLUGINS: false
+      NX_NO_CLOUD: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        # pnpm/action-setup reads the exact version from packageManager in package.json.
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Cypress binary
+        run: pnpm exec cypress install
+
+      - uses: nrwl/nx-set-shas@v4
+
+      - name: Check formatting
+        run: pnpm exec prettier --check .
+
+      - name: Lint, test, and build affected projects
+        run: pnpm exec nx affected -t lint test build --parallel=3
+
+      - name: Run end-to-end tests
+        # Keep E2E separate because its web server invokes the Next build in a
+        # second Nx process. Running both builds concurrently races on .next.
+        run: pnpm exec nx affected -t e2e --parallel=1
