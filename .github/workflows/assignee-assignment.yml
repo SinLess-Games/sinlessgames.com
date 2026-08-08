@@ -13,7 +13,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - name: Assign to repository owner
+      - name: Assign to Sinless777
         uses: actions/github-script@v7
         with:
           script: |

@@ -24,6 +24,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
+          version: 10.8.1
           run_install: false
 
       - name: Set up Node.js
@@ -41,4 +42,4 @@ jobs:
         run: pnpm exec prettier --check .
 
       - name: Lint, test, and build affected projects
-        run: pnpm exec nx affected -t lint test build --parallel=3
+        run: pnpm exec nx affected -t lint test build e2e-ci --parallel=3
