@@ -50,5 +50,9 @@ jobs:
         run: pnpm exec prettier --check .
 
       - name: Lint, test, and build affected projects
-        # The atomized e2e-ci target requires Nx Cloud; e2e runs the same specs locally.
-        run: pnpm exec nx affected -t lint test build e2e --parallel=3
+        run: pnpm exec nx affected -t lint test build --parallel=3
+
+      - name: Run end-to-end tests
+        # Keep E2E separate because its web server invokes the Next build in a
+        # second Nx process. Running both builds concurrently races on .next.
+        run: pnpm exec nx affected -t e2e --parallel=1
