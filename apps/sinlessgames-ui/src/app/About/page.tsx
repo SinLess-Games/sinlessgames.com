@@ -95,7 +95,7 @@ export default function AboutUs() {
         >
           Our Story
         </Typography>
-        <Box sx={{padding: 2}}/>
+        <Box sx={{ padding: 2 }} />
         <Box
           sx={{
             display: "flex",

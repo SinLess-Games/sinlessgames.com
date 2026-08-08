@@ -36,7 +36,7 @@ export const HomeCard: React.FC<CardProps> = ({
       >
         {title}
       </Typography>
-      <Box sx={{padding: 1}}/>
+      <Box sx={{ padding: 1 }} />
       <Grid
         container
         spacing={2}

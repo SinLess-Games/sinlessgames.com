@@ -5,6 +5,8 @@ import type { Metadata } from "next"
 import StyledComponentsRegistry from "./lib/registry"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
 import { ResponsiveAppBar } from "@sinlessgamesllc/react-components"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { pages } from "../variables/MainNavbar/pages"
 
 export const metadata: Metadata = {
@@ -43,6 +45,8 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             {children}
           </StyledComponentsRegistry>
         </AppRouterCacheProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
