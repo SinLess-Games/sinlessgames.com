@@ -22,9 +22,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install pnpm
+        # pnpm/action-setup reads the exact version from packageManager in package.json.
         uses: pnpm/action-setup@v4
         with:
-          version: 10.8.1
           run_install: false
 
       - name: Set up Node.js
