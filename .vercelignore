@@ -1,0 +1,14 @@
+# Generated build and dependency output
+dist
+node_modules
+.next
+.nx
+coverage
+tmp
+
+# Local Vercel state and environment files
+.vercel
+.env*
+
+# Repository metadata is not part of the build context
+.git
