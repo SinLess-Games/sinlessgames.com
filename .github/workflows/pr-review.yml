@@ -1,28 +1,30 @@
 name: pr-review
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  issues:
-    types: [labeled, reopened]
-  issue_comment:
-    types: [created]
 
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: read
 
 jobs:
   message:
     name: Send Discord Notification
     runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
       - name: Send Discord notification
+        if: env.DISCORD_WEBHOOK_URL != ''
         uses: stegzilla/discord-notify@v4
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          webhook_url: ${{ env.DISCORD_WEBHOOK_URL }}
           title: New PR opened
           message: "**${{ github.event.pull_request.title }}**\n**Creator:** ${{ github.event.pull_request.user.login }}\n${{ github.event.pull_request.html_url }}"
           include_image: true
           avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
           username: GitHub PR Notifier
+
+      - name: Skip notification when webhook is not configured
+        if: env.DISCORD_WEBHOOK_URL == ''
+        run: echo "DISCORD_WEBHOOK_URL is not configured; skipping notification."
