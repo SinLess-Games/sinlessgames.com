@@ -1,0 +1,9 @@
+# Tainted Kingdoms project-scoped Codex configuration.
+#
+# Codex reads custom project agents from .codex/agents/.
+# Individual agent files intentionally omit a hard-coded model so they inherit
+# the model selected by the parent Codex session.
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4

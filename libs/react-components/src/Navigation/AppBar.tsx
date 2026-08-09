@@ -1,177 +1,36 @@
 "use client"
-import React, { useState } from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Toolbar from "@mui/material/Toolbar"
-import Grid from "@mui/material/Grid"
-import IconButton from "@mui/material/IconButton"
-import Typography from "@mui/material/Typography"
-import Menu from "@mui/material/Menu"
+import { useState } from "react"
+import Image, { StaticImageData } from "next/image"
+import Link from "next/link"
 import MenuIcon from "@mui/icons-material/Menu"
-import Container from "@mui/material/Container"
-import Button from "@mui/material/Button"
-import MenuItem from "@mui/material/MenuItem"
-import Image from "next/image"
-import { ExpandMore, ExpandLess } from "@mui/icons-material"
-import { StaticImageData } from "next/image"
+import CloseIcon from "@mui/icons-material/Close"
 
-export type NavPageType = {
-  title: string
-  url: string
-}
+export type NavPageType = { title: string; url: string }
+export interface AppBarProps { pages: NavPageType[]; logo: string | StaticImageData }
 
-export interface AppBarProps {
-  pages: NavPageType[]
-  logo: string | StaticImageData
-}
-
-export const ResponsiveAppBar: React.FC<AppBarProps> = ({ pages, logo }) => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
-  const [isCollapsed, setIsCollapsed] = useState(false)
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget)
-  }
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed)
-  }
-
+export const ResponsiveAppBar = ({ pages, logo }: AppBarProps) => {
+  const [open, setOpen] = useState(false)
   return (
-    <Grid container direction="column">
-      <Grid item>
-        <AppBar
-          position="fixed"
-          sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.95)",
-            borderRadius: "0 0 50px 50px",
-            boxShadow: "0 0 5px 5px rgba(218, 165, 32, 0.6)"
-          }}
-        >
-          <Container>
-            <Toolbar disableGutters>
-              {/** Left section */}
-              <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-                {/** Logo */}
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  href="/"
-                  aria-label="SinLess Games home"
-                  sx={{
-                    mr: 2,
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".3rem",
-                    color: "inherit",
-                    textDecoration: "none"
-                  }}
-                >
-                  <Image
-                    src={logo}
-                    alt="SinLess Games emblem"
-                    width={54}
-                    height={50}
-                    style={{ objectFit: "contain" }}
-                  />
-                </Typography>
-                {/** Title */}
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  href="/"
-                  sx={{
-                    mr: 2,
-                    fontWeight: 700,
-                    letterSpacing: ".2rem",
-                    color: "#DAA520",
-                    textDecoration: "none"
-                  }}
-                >
-                  SinLess Games LLC
-                </Typography>
-              </Box>
-
-              {/** Center-aligned section (empty) */}
-              <Box sx={{ flexGrow: 1 }} />
-
-              {/** Right section */}
-              <Box sx={{ display: "flex", alignItems: "right" }}>
-                {/** Pages */}
-                <Box
-                  sx={{
-                    display: isCollapsed ? "none" : { xs: "none", md: "flex" }
-                  }}
-                >
-                  {pages.map((page) => (
-                    <Button
-                      key={page.title}
-                      href={page.url}
-                      sx={{ mx: 1, color: "#DAA520" }}
-                    >
-                      {page.title}
-                    </Button>
-                  ))}
-                </Box>
-                {/** Menu icon (for mobile) */}
-                <Box sx={{ display: { xs: "flex", md: "none" } }}>
-                  <IconButton
-                    size="large"
-                    aria-label="account of current user"
-                    aria-controls="menu-appbar"
-                    aria-haspopup="true"
-                    onClick={handleOpenNavMenu}
-                    color="inherit"
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorElNav}
-                    anchorOrigin={{
-                      vertical: "bottom",
-                      horizontal: "left"
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "left"
-                    }}
-                    open={Boolean(anchorElNav)}
-                    onClose={handleCloseNavMenu}
-                    sx={{
-                      display: { xs: "block", md: "none" }
-                    }}
-                  >
-                    {pages.map((page) => (
-                      <MenuItem key={page.title} href={page.url}>
-                        <Typography textAlign="center">{page.title}</Typography>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </Box>
-              </Box>
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </Grid>
-      <Grid item sx={{ justifyContent: "center" }}>
-        {/** Collapse/Expand icon */}
-        <IconButton
-          size="large"
-          aria-label="collapse-expand"
-          onClick={toggleCollapse}
-          color="inherit"
-        >
-          {isCollapsed ? <ExpandMore /> : <ExpandLess />}
-        </IconButton>
-      </Grid>
-    </Grid>
+    <header style={{ position:"sticky", top:0, zIndex:1000, background:"rgba(3,3,3,.94)", backdropFilter:"blur(14px)", borderBottom:"1px solid rgba(215,168,61,.38)" }}>
+      <nav aria-label="Primary navigation" style={{ width:"min(1280px,calc(100% - 2rem))", minHeight:76, margin:"auto", display:"flex", alignItems:"center", justifyContent:"space-between", gap:"1rem" }}>
+        <Link href="/" aria-label="SinLess Games home" style={{ display:"flex", alignItems:"center", gap:12, textDecoration:"none" }}>
+          <Image src={logo} alt="" width={48} height={48} style={{ objectFit:"contain" }} />
+          <span style={{ color:"#e8c769", fontFamily:"Cinzel,serif", fontSize:"clamp(.8rem,2vw,1rem)", fontWeight:600, letterSpacing:".15em", textTransform:"uppercase" }}>SinLess Games</span>
+        </Link>
+        <button aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} onClick={() => setOpen(!open)} className="nav-toggle" style={{ background:"transparent", color:"#e8c769", border:"1px solid rgba(215,168,61,.5)", minWidth:44, minHeight:44, cursor:"pointer" }}>{open ? <CloseIcon /> : <MenuIcon />}</button>
+        <div className={`nav-links ${open ? "nav-links--open" : ""}`}>
+          {pages.map((page) => <Link key={page.title} href={page.url} onClick={() => setOpen(false)}>{page.title}</Link>)}
+          <Link href="/Contact" className="nav-cta" onClick={() => setOpen(false)}>Join the journey</Link>
+        </div>
+      </nav>
+      <style jsx>{`
+        .nav-links { display:flex; align-items:center; gap:.35rem; }
+        .nav-links a { padding:.7rem .9rem; color:#bbb8b2; font:600 .68rem Cinzel,serif; letter-spacing:.13em; text-decoration:none; text-transform:uppercase; }
+        .nav-links a:hover { color:#f0ce77; }
+        .nav-links .nav-cta { margin-left:.5rem; border:1px solid #d7a83d; color:#f0ce77; }
+        .nav-toggle { display:none; }
+        @media(max-width:760px) { .nav-toggle { display:grid; place-items:center; } .nav-links { display:none; position:absolute; top:76px; left:0; right:0; padding:1rem; background:#070707; border-bottom:1px solid rgba(215,168,61,.38); flex-direction:column; align-items:stretch; } .nav-links--open { display:flex; } .nav-links a { min-height:44px; display:flex; align-items:center; justify-content:center; } .nav-links .nav-cta { margin-left:0; } }
+      `}</style>
+    </header>
   )
 }
