@@ -27,21 +27,21 @@ I sampled the logo itself as the basis for these colors.
 
 That means gold should be used for:
 
-* primary CTAs
-* selected navigation
-* important headings
-* active states
-* key dividers
-* badges for important content
-* subtle decorative framing
+- primary CTAs
+- selected navigation
+- important headings
+- active states
+- key dividers
+- badges for important content
+- subtle decorative framing
 
 Silver should be used for:
 
-* secondary headings
-* icons
-* metadata
-* secondary controls
-* neutral borders
+- secondary headings
+- icons
+- metadata
+- secondary controls
+- neutral borders
 
 Do **not** make every border and piece of text gold. That would cheapen the metallic effect.
 
@@ -66,11 +66,7 @@ Hero sections can use very subtle radial lighting:
 
 ```css
 background:
-  radial-gradient(
-    circle at 50% 10%,
-    rgba(181, 133, 53, 0.09),
-    transparent 42%
-  ),
+  radial-gradient(circle at 50% 10%, rgba(181, 133, 53, 0.09), transparent 42%),
   #020201;
 ```
 
@@ -97,10 +93,10 @@ background: linear-gradient(
 
 Use that for things like:
 
-* hero title accents
-* primary button borders
-* major section ornaments
-* premium badges
+- hero title accents
+- primary button borders
+- major section ornaments
+- premium badges
 
 For normal UI controls, use solid `#B58535` or `#D5AA56`.
 
@@ -139,11 +135,11 @@ For display typography, I'd use something in the **Cinzel / Trajan-style family*
 
 Use for:
 
-* hero headings
-* game titles
-* major section headings
-* important labels
-* special buttons
+- hero headings
+- game titles
+- major section headings
+- important labels
+- special buttons
 
 Example:
 
@@ -283,12 +279,7 @@ Black text on metallic gold would work extremely well.
 
 ```css
 .sg-button-primary {
-  background: linear-gradient(
-    135deg,
-    #936a29,
-    #d5aa56 45%,
-    #b58535
-  );
+  background: linear-gradient(135deg, #936a29, #d5aa56 45%, #b58535);
 
   color: #050505;
   border: 1px solid #d5aa56;
@@ -329,8 +320,8 @@ When cards are needed:
 background:
   linear-gradient(
     145deg,
-    rgba(255,255,255,.025),
-    rgba(255,255,255,.005)
+    rgba(255, 255, 255, 0.025),
+    rgba(255, 255, 255, 0.005)
   ),
   #0d0e0f;
 
@@ -355,13 +346,13 @@ No giant glow.
 
 I would make the main navbar:
 
-* black or nearly black
-* 70–80px tall desktop
-* logo on left
-* silver navigation labels
-* selected route in gold
-* subtle bottom border
-* CTA framed in gold
+- black or nearly black
+- 70–80px tall desktop
+- logo on left
+- silver navigation labels
+- selected route in gold
+- subtle bottom border
+- CTA framed in gold
 
 Something like:
 
@@ -422,13 +413,13 @@ Pull directly from the emblem.
 
 Use:
 
-* thin gold horizontal rules
-* sword-tip shapes
-* pointed separators
-* heraldic arches
-* extremely subtle dragon/lion patterns
-* angular corner ornaments
-* symmetrical framing on major hero areas
+- thin gold horizontal rules
+- sword-tip shapes
+- pointed separators
+- heraldic arches
+- extremely subtle dragon/lion patterns
+- angular corner ornaments
+- symmetrical framing on major hero areas
 
 For example:
 
@@ -454,22 +445,22 @@ Animations should therefore feel **deliberate**, not bouncy.
 
 Good:
 
-* 180–300ms fades
-* slow gold underline expansion
-* subtle image scale on hover
-* 1–3px vertical movement
-* metallic shimmer used extremely rarely
-* parallax on major artwork
-* cinematic section reveals
+- 180–300ms fades
+- slow gold underline expansion
+- subtle image scale on hover
+- 1–3px vertical movement
+- metallic shimmer used extremely rarely
+- parallax on major artwork
+- cinematic section reveals
 
 Bad:
 
-* bouncing buttons
-* constant glowing
-* particles covering everything
-* floating cards
-* rainbow gradients
-* twitchy hover animations
+- bouncing buttons
+- constant glowing
+- particles covering everything
+- floating cards
+- rainbow gradients
+- twitchy hover animations
 
 ---
 
@@ -480,37 +471,37 @@ For your existing MUI application, I would eventually establish something roughl
 ```ts
 const sinlessGamesTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
 
     primary: {
-      main: '#D5AA56',
-      light: '#E4BF6D',
-      dark: '#936A29',
-      contrastText: '#020201',
+      main: "#D5AA56",
+      light: "#E4BF6D",
+      dark: "#936A29",
+      contrastText: "#020201"
     },
 
     secondary: {
-      main: '#DCD8D2',
-      light: '#F1EDE6',
-      dark: '#9F9C97',
-      contrastText: '#020201',
+      main: "#DCD8D2",
+      light: "#F1EDE6",
+      dark: "#9F9C97",
+      contrastText: "#020201"
     },
 
     background: {
-      default: '#020201',
-      paper: '#0D0E0F',
+      default: "#020201",
+      paper: "#0D0E0F"
     },
 
     text: {
-      primary: '#F1EDE6',
-      secondary: '#9F9C97',
+      primary: "#F1EDE6",
+      secondary: "#9F9C97"
     },
 
-    divider: 'rgba(220, 216, 210, 0.12)',
+    divider: "rgba(220, 216, 210, 0.12)"
   },
 
   shape: {
-    borderRadius: 4,
+    borderRadius: 4
   },
 
   typography: {
@@ -519,28 +510,28 @@ const sinlessGamesTheme = createTheme({
     h1: {
       fontFamily: '"Cinzel", serif',
       fontWeight: 700,
-      letterSpacing: '0.03em',
+      letterSpacing: "0.03em"
     },
 
     h2: {
       fontFamily: '"Cinzel", serif',
       fontWeight: 600,
-      letterSpacing: '0.025em',
+      letterSpacing: "0.025em"
     },
 
     h3: {
       fontFamily: '"Cinzel", serif',
       fontWeight: 600,
-      letterSpacing: '0.02em',
+      letterSpacing: "0.02em"
     },
 
     button: {
       fontWeight: 700,
-      letterSpacing: '0.06em',
-      textTransform: 'uppercase',
-    },
-  },
-});
+      letterSpacing: "0.06em",
+      textTransform: "uppercase"
+    }
+  }
+})
 ```
 
 ## The overall feeling

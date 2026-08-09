@@ -101,7 +101,7 @@ export const ResponsiveAppBar = ({ pages, logo }: AppBarProps) => {
           </Link>
         </div>
       </nav>
-      <style jsx>{`
+      <style>{`
         .nav-links {
           display: flex;
           align-items: center;

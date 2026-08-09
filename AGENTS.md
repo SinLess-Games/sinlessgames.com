@@ -48,7 +48,7 @@ The current high-level repository structure is:
 ├── tsconfig.base.json
 ├── vercel.json
 └── vitest.workspace.ts
-````
+```
 
 The repository may also contain hidden project configuration such as `.codex/`.
 
@@ -68,12 +68,12 @@ apps/sinlessgames-ui
 
 Purpose:
 
-* main SinLess Games website
-* primary production frontend
-* Next.js application
-* React application
-* public marketing/studio/game website
-* deployed through Vercel
+- main SinLess Games website
+- primary production frontend
+- Next.js application
+- React application
+- public marketing/studio/game website
+- deployed through Vercel
 
 Important files include:
 
@@ -105,8 +105,8 @@ apps/sinlessgames-ui-e2e
 
 Purpose:
 
-* Cypress end-to-end tests
-* browser-level regression coverage for `sinlessgames-ui`
+- Cypress end-to-end tests
+- browser-level regression coverage for `sinlessgames-ui`
 
 Important locations:
 
@@ -142,9 +142,9 @@ apps/cdn
 
 Purpose:
 
-* Cloudflare-backed application/service
-* Wrangler-based deployment
-* Vite/Vitest tooling
+- Cloudflare-backed application/service
+- Wrangler-based deployment
+- Vite/Vitest tooling
 
 Important files include:
 
@@ -180,8 +180,8 @@ libs/react-components
 
 Purpose:
 
-* shared React components
-* reusable frontend infrastructure
+- shared React components
+- reusable frontend infrastructure
 
 Current structure includes:
 
@@ -272,14 +272,14 @@ apps/sinlessgames-ui/src/app/global.scss
 
 Before modifying:
 
-* global metadata
-* fonts
-* navigation providers
-* analytics
-* observability
-* theme providers
-* global styles
-* layout structure
+- global metadata
+- fonts
+- navigation providers
+- analytics
+- observability
+- theme providers
+- global styles
+- layout structure
 
 inspect `layout.tsx`, `global.scss`, and relevant providers first.
 
@@ -484,14 +484,14 @@ Docs/README.md
 
 Update documentation when a task materially changes:
 
-* developer setup
-* architecture
-* build behavior
-* deployment
-* APIs
-* operational procedures
-* configuration
-* public workflows
+- developer setup
+- architecture
+- build behavior
+- deployment
+- APIs
+- operational procedures
+- configuration
+- public workflows
 
 Do not create documentation merely to describe obvious implementation details.
 
@@ -503,12 +503,12 @@ Use repository-defined tooling and versions.
 
 Current important versions include:
 
-* Node.js: 22 in CI
-* pnpm: exact version declared by `packageManager` in `package.json`
-* Nx: 20.8.4
-* Next.js: 15.x
-* React: 18.x
-* TypeScript: 5.7.x
+- Node.js: 22 in CI
+- pnpm: exact version declared by `packageManager` in `package.json`
+- Nx: 20.8.4
+- Next.js: 15.x
+- React: 18.x
+- TypeScript: 5.7.x
 
 Always use pnpm.
 
@@ -816,10 +816,10 @@ unless there is a clearly documented and unavoidable reason.
 
 Prefer:
 
-* explicit interfaces where useful;
-* inferred local types where obvious;
-* discriminated unions for meaningful state;
-* existing shared types when available.
+- explicit interfaces where useful;
+- inferred local types where obvious;
+- discriminated unions for meaningful state;
+- existing shared types when available.
 
 Do not create excessive type abstractions for trivial code.
 
@@ -832,18 +832,18 @@ Preserve server components whenever practical.
 Do not add:
 
 ```typescript
-"use client";
+"use client"
 ```
 
 unless client-side behavior actually requires it.
 
 Valid reasons include:
 
-* state;
-* effects;
-* browser APIs;
-* event handlers;
-* client-only libraries.
+- state;
+- effects;
+- browser APIs;
+- event handlers;
+- client-only libraries.
 
 If only a small part of a large component requires client behavior, isolate that
 interactive boundary rather than converting the entire page or layout into a
@@ -881,9 +881,9 @@ apps/sinlessgames-ui/src/instrumentation.ts
 
 The repository also contains dependencies for:
 
-* Vercel Analytics;
-* Vercel Speed Insights;
-* OpenTelemetry / Vercel observability.
+- Vercel Analytics;
+- Vercel Speed Insights;
+- OpenTelemetry / Vercel observability.
 
 Before adding telemetry or changing instrumentation:
 
@@ -908,14 +908,14 @@ Gilded Dominion
 
 Gilded Dominion is based on the current SinLess Games visual identity:
 
-* obsidian black;
-* royal and antique gold;
-* forged silver;
-* heraldic geometry;
-* dragon and lion symbolism;
-* central sword motif;
-* premium dark-fantasy presentation;
-* cinematic restraint.
+- obsidian black;
+- royal and antique gold;
+- forged silver;
+- heraldic geometry;
+- dragon and lion symbolism;
+- central sword motif;
+- premium dark-fantasy presentation;
+- cinematic restraint.
 
 The root agent should preserve this direction.
 
@@ -943,23 +943,23 @@ Use the `ui_ux` agent for substantial design-oriented frontend work.
 
 Delegate tasks such as:
 
-* homepage redesigns;
-* page creation;
-* page redesigns;
-* major visual refreshes;
-* responsive layout work;
-* mobile UX;
-* navigation design;
-* dashboard design;
-* forms and user flows;
-* accessibility improvements;
-* design-system changes;
-* typography systems;
-* major styling work;
-* visual consistency audits;
-* component visual design;
-* usability reviews;
-* visual QA.
+- homepage redesigns;
+- page creation;
+- page redesigns;
+- major visual refreshes;
+- responsive layout work;
+- mobile UX;
+- navigation design;
+- dashboard design;
+- forms and user flows;
+- accessibility improvements;
+- design-system changes;
+- typography systems;
+- major styling work;
+- visual consistency audits;
+- component visual design;
+- usability reviews;
+- visual QA.
 
 The `ui_ux` agent is the specialist authority for the detailed Gilded Dominion
 design language.
@@ -972,11 +972,11 @@ Delegate to `ui_ux` when meaningful design judgment is required.
 
 Do not delegate trivial changes such as:
 
-* correcting one typo;
-* changing one label;
-* changing one obvious spacing value;
-* removing an unused import;
-* simple mechanical refactors.
+- correcting one typo;
+- changing one label;
+- changing one obvious spacing value;
+- removing an unused import;
+- simple mechanical refactors.
 
 For substantial frontend work:
 
@@ -989,10 +989,10 @@ For substantial frontend work:
 
 For mixed frontend/backend tasks:
 
-* `ui_ux` owns visual hierarchy, interaction, responsiveness, and frontend
+- `ui_ux` owns visual hierarchy, interaction, responsiveness, and frontend
   experience;
-* the primary agent owns overall architecture and coordination;
-* backend security remains authoritative.
+- the primary agent owns overall architecture and coordination;
+- backend security remains authoritative.
 
 Do not allow UI convenience to weaken backend security.
 
@@ -1002,15 +1002,15 @@ Do not allow UI convenience to weaken backend security.
 
 Do not allow public SinLess Games pages to drift toward:
 
-* generic SaaS design;
-* generic AI-generated landing pages;
-* neon cyberpunk styling;
-* stock Material UI;
-* Bootstrap-like presentation;
-* excessive glassmorphism;
-* excessive rounded cards;
-* random gradients;
-* unrelated purple/blue tech aesthetics.
+- generic SaaS design;
+- generic AI-generated landing pages;
+- neon cyberpunk styling;
+- stock Material UI;
+- Bootstrap-like presentation;
+- excessive glassmorphism;
+- excessive rounded cards;
+- random gradients;
+- unrelated purple/blue tech aesthetics.
 
 The visual identity should remain primarily:
 
@@ -1038,10 +1038,10 @@ Use MUI as infrastructure rather than replacing it.
 
 Do not introduce another major component framework such as:
 
-* Chakra UI;
-* Ant Design;
-* Bootstrap;
-* another full design system;
+- Chakra UI;
+- Ant Design;
+- Bootstrap;
+- another full design system;
 
 unless explicitly authorized.
 
@@ -1055,10 +1055,10 @@ Prefer project theme values and reusable variants when they exist.
 
 Current frontend styling includes:
 
-* global SCSS;
-* SCSS modules;
-* Material UI;
-* styled-components-related infrastructure.
+- global SCSS;
+- SCSS modules;
+- Material UI;
+- styled-components-related infrastructure.
 
 Inspect the local component and theme patterns before choosing a styling
 approach.
@@ -1076,15 +1076,15 @@ Accessibility is a product requirement.
 
 For user-facing work:
 
-* use semantic HTML;
-* preserve keyboard navigation;
-* provide visible focus states;
-* use proper controls rather than clickable generic containers;
-* associate labels with form inputs;
-* give icon-only controls accessible names;
-* preserve logical heading order;
-* maintain adequate contrast;
-* respect reduced-motion preferences where relevant.
+- use semantic HTML;
+- preserve keyboard navigation;
+- provide visible focus states;
+- use proper controls rather than clickable generic containers;
+- associate labels with form inputs;
+- give icon-only controls accessible names;
+- preserve logical heading order;
+- maintain adequate contrast;
+- respect reduced-motion preferences where relevant.
 
 Target WCAG 2.2 AA where practical.
 
@@ -1096,29 +1096,29 @@ Do not sacrifice basic accessibility for cinematic styling.
 
 Public-facing interfaces must work intentionally across:
 
-* narrow mobile;
-* standard mobile;
-* tablet;
-* laptop;
-* desktop;
-* wide desktop.
+- narrow mobile;
+- standard mobile;
+- tablet;
+- laptop;
+- desktop;
+- wide desktop.
 
 Do not treat mobile as a smaller desktop page.
 
 Evaluate:
 
-* navigation;
-* stacking order;
-* typography;
-* image cropping;
-* touch targets;
-* content widths;
-* cards/grids;
-* dialogs;
-* forms;
-* hero sections;
-* footer behavior;
-* horizontal overflow.
+- navigation;
+- stacking order;
+- typography;
+- image cropping;
+- touch targets;
+- content widths;
+- cards/grids;
+- dialogs;
+- forms;
+- hero sections;
+- footer behavior;
+- horizontal overflow.
 
 ---
 
@@ -1128,16 +1128,16 @@ Avoid frontend changes that create unnecessary performance problems.
 
 Watch for:
 
-* unnecessary client components;
-* large frontend dependencies;
-* oversized images;
-* excessive animation;
-* huge DOM trees;
-* avoidable rerenders;
-* layout shift;
-* unnecessary JavaScript for CSS-capable effects;
-* large background video;
-* duplicate telemetry initialization.
+- unnecessary client components;
+- large frontend dependencies;
+- oversized images;
+- excessive animation;
+- huge DOM trees;
+- avoidable rerenders;
+- layout shift;
+- unnecessary JavaScript for CSS-capable effects;
+- large background video;
+- duplicate telemetry initialization.
 
 Preserve Next.js server rendering and server components where practical.
 
@@ -1204,19 +1204,19 @@ The primary site is deployed through Vercel.
 
 Before changing Vercel behavior:
 
-* inspect `vercel.json`;
-* inspect Next.js output/build requirements;
-* inspect the Nx project configuration;
-* consider repository-root behavior.
+- inspect `vercel.json`;
+- inspect Next.js output/build requirements;
+- inspect the Nx project configuration;
+- consider repository-root behavior.
 
 Do not independently:
 
-* change production domains;
-* delete environment variables;
-* change project ownership;
-* alter production credentials;
-* deploy production;
-* change organization configuration;
+- change production domains;
+- delete environment variables;
+- change project ownership;
+- alter production credentials;
+- deploy production;
+- change organization configuration;
 
 unless explicitly requested.
 
@@ -1262,26 +1262,26 @@ reason.
 
 Never commit:
 
-* API keys;
-* access tokens;
-* passwords;
-* `.env` secrets;
-* GitHub tokens;
-* Cloudflare credentials;
-* Vercel credentials;
-* private keys;
-* session secrets;
-* database credentials.
+- API keys;
+- access tokens;
+- passwords;
+- `.env` secrets;
+- GitHub tokens;
+- Cloudflare credentials;
+- Vercel credentials;
+- private keys;
+- session secrets;
+- database credentials.
 
 Use environment-variable conventions already established by the repository.
 
 If a credential appears in:
 
-* a prompt;
-* terminal output;
-* source code;
-* configuration;
-* Git history;
+- a prompt;
+- terminal output;
+- source code;
+- configuration;
+- Git history;
 
 do not propagate it into another file.
 
@@ -1293,11 +1293,11 @@ Do not echo sensitive values unnecessarily.
 
 Do not weaken:
 
-* authentication;
-* authorization;
-* role checks;
-* permission boundaries;
-* server-side validation;
+- authentication;
+- authorization;
+- role checks;
+- permission boundaries;
+- server-side validation;
 
 for frontend convenience.
 
@@ -1315,14 +1315,14 @@ Keep changes focused on the requested task.
 
 Do not perform unrelated:
 
-* cleanup;
-* dependency upgrades;
-* formatting sweeps;
-* directory reorganizations;
-* framework migrations;
-* architecture rewrites;
-* route renames;
-* design-system rewrites;
+- cleanup;
+- dependency upgrades;
+- formatting sweeps;
+- directory reorganizations;
+- framework migrations;
+- architecture rewrites;
+- route renames;
+- design-system rewrites;
 
 unless they are part of the task.
 
@@ -1336,12 +1336,12 @@ Preserve public APIs unless the requested change requires breaking them.
 
 Refactor when doing so materially improves:
 
-* correctness;
-* maintainability;
-* testability;
-* accessibility;
-* performance;
-* implementation clarity.
+- correctness;
+- maintainability;
+- testability;
+- accessibility;
+- performance;
+- implementation clarity.
 
 Do not refactor unrelated code simply because it can be improved.
 
@@ -1356,18 +1356,18 @@ official documentation when available.
 
 Prefer official documentation for:
 
-* OpenAI / Codex;
-* Next.js;
-* React;
-* Nx;
-* Material UI;
-* Vercel;
-* Cloudflare;
-* Wrangler;
-* Cypress;
-* Vitest;
-* Jest;
-* pnpm.
+- OpenAI / Codex;
+- Next.js;
+- React;
+- Nx;
+- Material UI;
+- Vercel;
+- Cloudflare;
+- Wrangler;
+- Cypress;
+- Vitest;
+- Jest;
+- pnpm.
 
 Do not rely on stale remembered APIs when version-specific behavior matters.
 
@@ -1477,16 +1477,16 @@ Do not invent production-facing claims.
 
 Never fabricate:
 
-* release dates;
-* review scores;
-* player counts;
-* awards;
-* testimonials;
-* partners;
-* supported platforms;
-* game features;
-* company metrics;
-* customer statistics.
+- release dates;
+- review scores;
+- player counts;
+- awards;
+- testimonials;
+- partners;
+- supported platforms;
+- game features;
+- company metrics;
+- customer statistics.
 
 Use repository content or user-provided facts.
 
@@ -1498,11 +1498,11 @@ If placeholder content is necessary, make its placeholder nature clear.
 
 For user-facing features:
 
-* provide meaningful error states;
-* avoid leaking implementation details;
-* preserve user-entered data where practical;
-* make recovery paths obvious;
-* do not expose stack traces.
+- provide meaningful error states;
+- avoid leaking implementation details;
+- preserve user-entered data where practical;
+- make recovery paths obvious;
+- do not expose stack traces.
 
 For developer tooling, return enough context to diagnose failures.
 
@@ -1512,11 +1512,11 @@ For developer tooling, return enough context to diagnose failures.
 
 When modifying instrumentation, analytics, or logging:
 
-* avoid capturing secrets;
-* avoid unnecessary personally identifying data;
-* avoid duplicate event emission;
-* preserve existing telemetry integrations;
-* document meaningful architecture changes.
+- avoid capturing secrets;
+- avoid unnecessary personally identifying data;
+- avoid duplicate event emission;
+- preserve existing telemetry integrations;
+- document meaningful architecture changes.
 
 Telemetry should help understand the application, not indiscriminately capture
 everything.
@@ -1531,21 +1531,21 @@ For substantial tasks:
 
 Inspect:
 
-* relevant source files;
-* project configuration;
-* related components;
-* related tests;
-* shared code;
-* existing patterns.
+- relevant source files;
+- project configuration;
+- related components;
+- related tests;
+- shared code;
+- existing patterns.
 
 ## Step 2 — Plan
 
 Determine:
 
-* affected Nx projects;
-* architectural boundaries;
-* required changes;
-* validation strategy.
+- affected Nx projects;
+- architectural boundaries;
+- required changes;
+- validation strategy.
 
 ## Step 3 — Delegate When Appropriate
 
@@ -1579,11 +1579,11 @@ for unintended changes.
 
 Report:
 
-* files changed;
-* behavior changed;
-* tests run;
-* build results;
-* unresolved concerns.
+- files changed;
+- behavior changed;
+- tests run;
+- build results;
+- unresolved concerns.
 
 ---
 
@@ -1669,16 +1669,16 @@ For UI/UX review, use the dedicated `ui_ux` agent where appropriate.
 
 Before describing work as ready for a pull request:
 
-* inspect the final diff;
-* verify only intended files changed;
-* check for secrets;
-* remove debug code;
-* remove temporary files;
-* remove abandoned implementation attempts;
-* run relevant tests;
-* run relevant lint;
-* run relevant build;
-* run broader affected checks when justified.
+- inspect the final diff;
+- verify only intended files changed;
+- check for secrets;
+- remove debug code;
+- remove temporary files;
+- remove abandoned implementation attempts;
+- run relevant tests;
+- run relevant lint;
+- run relevant build;
+- run broader affected checks when justified.
 
 Do not claim CI will pass unless equivalent checks have actually passed.
 
@@ -1690,14 +1690,14 @@ A successful local implementation is not automatically production-ready.
 
 Production readiness may additionally require:
 
-* CI success;
-* E2E success;
-* preview deployment;
-* environment configuration;
-* analytics verification;
-* observability verification;
-* Vercel deployment verification;
-* Cloudflare verification.
+- CI success;
+- E2E success;
+- preview deployment;
+- environment configuration;
+- analytics verification;
+- observability verification;
+- Vercel deployment verification;
+- Cloudflare verification.
 
 Only perform production actions when authorized.
 
@@ -1707,15 +1707,15 @@ Only perform production actions when authorized.
 
 Before declaring a coding task complete:
 
-* inspect the final diff;
-* confirm no unrelated user work was overwritten;
-* confirm no secrets were introduced;
-* confirm intended behavior was implemented;
-* run relevant validation;
-* report exactly what passed;
-* report exactly what was not run;
-* report known remaining issues;
-* identify follow-up work when genuinely necessary.
+- inspect the final diff;
+- confirm no unrelated user work was overwritten;
+- confirm no secrets were introduced;
+- confirm intended behavior was implemented;
+- run relevant validation;
+- report exactly what passed;
+- report exactly what was not run;
+- report known remaining issues;
+- identify follow-up work when genuinely necessary.
 
 Do not claim success based solely on code compilation.
 
@@ -1777,10 +1777,10 @@ Do not allow the public website to drift away from the SinLess Games identity.
 
 Build changes that are:
 
-* correct;
-* maintainable;
-* tested;
-* accessible;
-* performant;
-* deliberate;
-* production-quality.
+- correct;
+- maintainable;
+- tested;
+- accessible;
+- performant;
+- deliberate;
+- production-quality.
