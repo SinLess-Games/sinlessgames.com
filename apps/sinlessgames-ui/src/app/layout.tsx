@@ -1,6 +1,5 @@
 import React from "react"
 import "./global.scss"
-import Background from "../components/background"
 import type { Metadata } from "next"
 import StyledComponentsRegistry from "./lib/registry"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sinlessgames.com/"),
   title: "SinLess Games | Create Worlds. Defy Limits.",
   description:
-    "SinLess Games is a game development studio that creates highly immersive games with well-thought-out storylines and great graphics.",
+    "SinLess Games creates immersive, story-driven game experiences.",
   generator: "Next.js",
   creator: "Timothy A. Pierce",
   publisher: "SinLess Games LLC",
@@ -21,28 +20,34 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/images/sinless-games-mark.webp"
-  },
-  formatDetection: {
-    email: true,
-    telephone: true,
-    address: true
   }
 }
 
-const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const logoUrl = "/images/sinless-games-mark.webp"
-  const backgroundUrl =
-    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/galaxy_planets.webp"
-
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <AppRouterCacheProvider>
           <StyledComponentsRegistry>
-            <Background $image={backgroundUrl} />
-            <ResponsiveAppBar pages={pages} logo={logoUrl} />
-            <br />
-            {children}
+            <ResponsiveAppBar
+              pages={pages}
+              logo="/images/sinless-games-mark.webp"
+            />
+            <div id="main-content">{children}</div>
+            <footer className="site-footer">
+              <span>SinLess Games LLC</span>
+              <span className="site-footer__mark" aria-hidden="true">
+                ◆
+              </span>
+              <span>Create worlds. Defy limits.</span>
+            </footer>
           </StyledComponentsRegistry>
         </AppRouterCacheProvider>
         <Analytics />
@@ -51,5 +56,3 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     </html>
   )
 }
-
-export default RootLayout
