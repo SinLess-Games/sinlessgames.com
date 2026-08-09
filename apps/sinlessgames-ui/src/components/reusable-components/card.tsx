@@ -11,7 +11,14 @@ export interface CardProps {
   sx?: React.CSSProperties
 }
 
-export default function Card({ title, description, image, link, buttonText, quote }: CardProps) {
+export default function Card({
+  title,
+  description,
+  image,
+  link,
+  buttonText,
+  quote
+}: CardProps) {
   const isInternal = link?.startsWith("/")
   return (
     <article className="dominion-card">
@@ -21,11 +28,21 @@ export default function Card({ title, description, image, link, buttonText, quot
         {quote && <p className="dominion-card__quote">{quote}</p>}
         {description && <p>{description}</p>}
       </div>
-      {link && (isInternal ? (
-        <Link className="button button--quiet" href={link}>{buttonText ?? "Read more"}</Link>
-      ) : (
-        <a className="button button--quiet" href={link} target={link.startsWith("mailto:") ? undefined : "_blank"} rel={link.startsWith("mailto:") ? undefined : "noopener noreferrer"}>{buttonText ?? "Visit"}</a>
-      ))}
+      {link &&
+        (isInternal ? (
+          <Link className="button button--quiet" href={link}>
+            {buttonText ?? "Read more"}
+          </Link>
+        ) : (
+          <a
+            className="button button--quiet"
+            href={link}
+            target={link.startsWith("mailto:") ? undefined : "_blank"}
+            rel={link.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+          >
+            {buttonText ?? "Visit"}
+          </a>
+        ))}
     </article>
   )
 }

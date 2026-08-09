@@ -49,17 +49,25 @@ export default function Index() {
           <article className="feature-panel">
             <span className="feature-panel__number">I</span>
             <h3>Immersive by design</h3>
-            <p>Every system serves the world, its story, and the player within it.</p>
+            <p>
+              Every system serves the world, its story, and the player within
+              it.
+            </p>
           </article>
           <article className="feature-panel">
             <span className="feature-panel__number">II</span>
             <h3>Built with conviction</h3>
-            <p>We value thoughtful execution, honest collaboration, and durable work.</p>
+            <p>
+              We value thoughtful execution, honest collaboration, and durable
+              work.
+            </p>
           </article>
           <article className="feature-panel">
             <span className="feature-panel__number">III</span>
             <h3>Community at the table</h3>
-            <p>Players and creators help shape the journey beyond the horizon.</p>
+            <p>
+              Players and creators help shape the journey beyond the horizon.
+            </p>
           </article>
         </div>
       </section>

@@ -38,12 +38,8 @@ when a separate Worker is the appropriate architectural boundary.
 New Cloudflare Worker applications MUST be generated using the installed
 @naxodev/nx-cloudflare Nx plugin rather than manually scaffolding an arbitrary
 Worker project.
-
-The old apps/cdn application no longer exists and must not be assumed to exist.
 """
 
-model = "gpt-5.3-codex"
-model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
 
 developer_instructions = """

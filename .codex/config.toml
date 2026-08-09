@@ -1,9 +1,16 @@
-# Tainted Kingdoms project-scoped Codex configuration.
+# Project-scoped Codex configuration.
 #
-# Codex reads custom project agents from .codex/agents/.
-# Individual agent files intentionally omit a hard-coded model so they inherit
-# the model selected by the parent Codex session.
+# The parent session may use the explicit GPT-5.6 Sol model ID.
+# Project subagents use the Codex-supported GPT-5.6 alias,
+# which routes to GPT-5.6 Sol.
 
 [agents]
 enabled = true
 max_concurrent_threads_per_session = 4
+
+# # Use GPT-5.6 Sol for project subagents through the Codex-supported alias.
+# default_subagent_model = "gpt-5.6"
+
+# # Start with high until agent spawning is verified.
+# # Individual agents can be raised later if needed.
+# default_subagent_reasoning_effort = "high"

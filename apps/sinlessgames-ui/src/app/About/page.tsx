@@ -15,15 +15,22 @@ export default function AboutUs() {
       <header className="page-heading">
         <p className="eyebrow">The people behind the crest</p>
         <h1>About Us</h1>
-        <p>Independent in spirit, united by a belief that games should transport, challenge, and endure.</p>
+        <p>
+          Independent in spirit, united by a belief that games should transport,
+          challenge, and endure.
+        </p>
       </header>
       <section className="card-grid" aria-label="Our studio">
-        {[MissionCard, VisionCard, TeamCard].map((card) => <Card key={card.title} {...card} />)}
+        {[MissionCard, VisionCard, TeamCard].map((card) => (
+          <Card key={card.title} {...card} />
+        ))}
       </section>
       <section className="story-panel" aria-labelledby="story-title">
         <p className="eyebrow">From spark to standard</p>
         <h2 id="story-title">Our Story</h2>
-        {story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        {story.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </section>
     </main>
   )
