@@ -44,7 +44,7 @@ jobs:
       - name: Install Cypress binary
         run: pnpm exec cypress install
 
-      - uses: nrwl/nx-set-shas@v4
+      - uses: nrwl/nx-set-shas@v5
 
       - name: Check formatting
         run: pnpm exec prettier --check .
