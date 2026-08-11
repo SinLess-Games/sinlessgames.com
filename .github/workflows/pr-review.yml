@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Send Discord notification
         if: env.DISCORD_WEBHOOK_URL != ''
-        uses: stegzilla/discord-notify@v4
+        uses: stegzilla/discord-notify@v5
         with:
           webhook_url: ${{ env.DISCORD_WEBHOOK_URL }}
           title: New PR opened
