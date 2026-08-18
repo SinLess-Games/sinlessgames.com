@@ -21,7 +21,7 @@
     "@babel/core": "^7.26.10",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.27.0",
-    "@cloudflare/vitest-pool-workers": "^0.6.16",
+    "@cloudflare/vitest-pool-workers": "^0.22.0",
     "@cloudflare/workerd-windows-64": "^1.20250407.0",
     "@cloudflare/workers-types": "^4.20260702.1",
     "@naxodev/nx-cloudflare": "^4.0.0",
