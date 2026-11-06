@@ -1,5 +1,5 @@
 /* eslint-disable */
-export const jestConfig = {
+const jestConfig = {
   displayName: "sinlessgames-ui",
   preset: "../../jest.preset.js",
   transform: {
@@ -10,4 +10,4 @@ export const jestConfig = {
   coverageDirectory: "../../coverage/apps/sinlessgames-ui"
 }
 
-export default jestConfig
+module.exports = jestConfig
