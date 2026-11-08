@@ -56,3 +56,5 @@ vitest.config.*.timestamp*
 .vercel
 .env*
 !.env.example
+
+.claude/worktrees
