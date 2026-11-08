@@ -4,7 +4,10 @@ FROM docker.io/node:lts-alpine as deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /usr/src/app
 COPY dist/apps/sinlessgames-ui/package*.json ./
-RUN npm install --omit=dev
+# semver is required when Next loads the generated Nx config. It is not
+# declared on the app package, and the production config path does not
+# load the rest of Nx.
+RUN npm install --omit=dev semver@7
 
 # Production image, copy all the files and run next
 FROM docker.io/node:lts-alpine as runner
@@ -16,6 +19,10 @@ COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=deps /usr/src/app/package.json ./package.json
 COPY dist/apps/sinlessgames-ui/public ./public
 COPY dist/apps/sinlessgames-ui/.next ./.next
+# next start reads this config at runtime. The Nx build emits it with
+# .nx-helpers so poweredByHeader and headers apply outside Vercel.
+COPY dist/apps/sinlessgames-ui/next.config.js ./next.config.js
+COPY dist/apps/sinlessgames-ui/.nx-helpers ./.nx-helpers
 RUN chown -R node:node .
 USER node
 EXPOSE 3000
