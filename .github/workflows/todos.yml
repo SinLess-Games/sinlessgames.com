@@ -1,12 +1,19 @@
 name: TODO workflow
 on: [push, pull_request]
+
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Run tdg-github-action
-        uses: ribtoks/tdg-github-action@master
+        # Pinned to the v0.4.17-beta commit. A floating @master ref lets a
+        # rewritten branch run with this workflow's token.
+        uses: ribtoks/tdg-github-action@7cc4b6643e790dde39ac8bf2cfc8c08c660afbb2
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
