@@ -18,9 +18,9 @@
   },
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.26.10",
-    "@babel/preset-react": "^7.26.3",
-    "@babel/preset-typescript": "^7.27.0",
+    "@babel/core": "^7.29.13",
+    "@babel/preset-react": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "@cloudflare/workerd-windows-64": "^1.20250407.0",
     "@cloudflare/workers-types": "^4.20260702.1",
     "@nx-tools/container-metadata": "^6.1.1",
