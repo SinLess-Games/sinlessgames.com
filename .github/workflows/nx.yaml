@@ -23,7 +23,7 @@ jobs:
 
       - name: Install pnpm
         # pnpm/action-setup reads the exact version from packageManager in package.json.
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         with:
           run_install: false
       - name: Set up Node.js
