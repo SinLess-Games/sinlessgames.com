@@ -138,7 +138,7 @@ importers:
         version: 4.20260702.1
       '@nx-tools/container-metadata':
         specifier: ^6.1.1
-        version: 6.1.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
+        version: 6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
       '@nx-tools/nx-container':
         specifier: ^6.2.0
         version: 6.2.0(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(@nx/js@22.7.12(@babel/traverse@7.29.13)(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(@swc/helpers@0.5.24)(dotenv@16.6.1)(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24)))(tslib@2.8.1)
@@ -282,6 +282,9 @@ packages:
 
   '@actions/github@6.0.0':
     resolution: {integrity: sha512-alScpSVnYmjNEXboZjarjukQEzgCRmjMv6Xj47fsdnqGS73bjJNDpiiXmp8jr0UZLdUB6d9jW63IcmddUP+l0g==}
+
+  '@actions/github@6.0.1':
+    resolution: {integrity: sha512-xbZVcaqD4XnQAe35qSQqskb3SqIAfRyLBrHMd/8TuL7hJSz2QtbDwnNM8zWx4zO5l2fnGtseNE3MbEvD7BxVMw==}
 
   '@actions/http-client@2.2.3':
     resolution: {integrity: sha512-mx8hyJi/hjFvbPokCg4uRd4ZX78t+YyRPtnKWwIl+RzNaVuFpQHfmlGVfsKEJN8LwTCvL+DfVgAM04XaHkm6bA==}
@@ -957,8 +960,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/runtime-corejs3@7.27.0':
-    resolution: {integrity: sha512-UWjX6t+v+0ckwZ50Y5ShZLnlk95pP5MyW/pon9tiYzl3+18pkTHTFNTKr7rQbfRXPkowt2QAn30o1b6oswszew==}
+  '@babel/runtime-corejs3@7.29.13':
+    resolution: {integrity: sha512-vz2jdupHNmzH+i7E6u6Np8dKWMwp+P9R8lbjXerbD4YcaHa+Jc2rmSR8MhMfXpHZYcwZ28Wq0LsbcLf50TglIw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.27.0':
@@ -2221,16 +2224,33 @@ packages:
     peerDependencies:
       tslib: ^2.5.0
 
+  '@nx-tools/ci-context@6.9.1':
+    resolution: {integrity: sha512-dsdrkzKJAVSk5g8f823M93J6sGEKOh4ThRsKtAoLsrDoI92W07OaDBzo9jMYEutrucQ3Lnj92+DCVHfgs4ZYLw==}
+    peerDependencies:
+      tslib: ^2.5.0
+
   '@nx-tools/container-metadata@6.1.1':
     resolution: {integrity: sha512-8jIf+zOwPSFog3wrWCLvQ3L0cUZ47ZX2lpbJmkY97cOCPyX/2gIOL/jQ58+ksphd+F0XkIMiXivzjpN6wkwTng==}
     peerDependencies:
       '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
       tslib: ^2.5.0
 
+  '@nx-tools/container-metadata@6.9.1':
+    resolution: {integrity: sha512-5BS2g6FreV/gYtts1ct/yhXPTHCtOOfDwMgkvJrPbGYpvWKCAmmJLH8hxK/c706JhMXKMHbpyW1f2mRdqy215A==}
+    peerDependencies:
+      '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
+      tslib: ^2.5.0
+
   '@nx-tools/core@6.1.1':
     resolution: {integrity: sha512-AXMK/Q7klxtsEMMP9r/xeIfblShVytD6oSA2vYeJUS6Q1YaJcnEo0absYON2t1oquVgBButoTdNZKDvG4wCmmg==}
     peerDependencies:
       '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0
+      tslib: ^2.5.0
+
+  '@nx-tools/core@6.9.1':
+    resolution: {integrity: sha512-6bZA2bJ4pEhiR3SxIMUEuj1SEqAL1q1Uhj3k4i6LLKE/jAUE9RIyhOYGsw1DIcneb53NHS3JK9dJ8dscFFo5+Q==}
+    peerDependencies:
+      '@nx/devkit': ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0
       tslib: ^2.5.0
 
   '@nx-tools/nx-container@6.2.0':
@@ -2404,6 +2424,10 @@ packages:
 
   '@octokit/core@5.2.1':
     resolution: {integrity: sha512-dKYCMuPO1bmrpuogcjQ8z7ICCH3FP6WmxpwC03yjzGfZhj9fTJg6+bS1+UAplekbN2C+M61UNllGOOoAfGCrdQ==}
+    engines: {node: '>= 18'}
+
+  '@octokit/core@5.2.2':
+    resolution: {integrity: sha512-/g2d4sW9nUDJOMz3mabVQvOGhVa4e/BN/Um7yca9Bb2XTzPPnfTWHWQg+IsEYO7M3Vx+EXvaM/I2pJWIMun1bg==}
     engines: {node: '>= 18'}
 
   '@octokit/endpoint@9.0.6':
@@ -2842,6 +2866,7 @@ packages:
 
   '@renovate/pep440@1.0.0':
     resolution: {integrity: sha512-k3pZVxGEGpU7rpH507/9vxfFjuxX7qx4MSj9Fk+6zBsf/uZmAy8x97dNtZacbge7gP9TazbW1d7SEb5vsOmKlw==}
+    deprecated: This package is deprecated. Please use @renovatebot/pep440 instead.
 
   '@rollup/plugin-babel@6.1.0':
     resolution: {integrity: sha512-dFZNuFD2YRcoomP4oYf+DvQNSUA9ih+A3vUqopQx5EdtPGo3WBnQcI/S8pwpz91UsGfL0HsMSOlaMld8HrbubA==}
@@ -3915,6 +3940,7 @@ packages:
 
   abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
+    deprecated: Use your platform's native atob() and btoa() methods instead
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -4440,6 +4466,10 @@ packages:
     resolution: {integrity: sha512-cYY9mypksY8NRqgDB1XD1RiJL338v/551niynFTGkZOO2LHuB2OmOYxDIe/ttN9AHwrqdum1360G3ald0W9kCg==}
     engines: {node: '>=8'}
 
+  ci-info@4.5.0:
+    resolution: {integrity: sha512-d1uM8k5UZEyPza1n/MG3ko8nKupKN0KJpFsipgPcgaCCvV+IqIfJ+NzTjetlLM+UcXZx3+cLrNr76+eAO7G1Mw==}
+    engines: {node: '>=8'}
+
   cjs-module-lexer@1.4.3:
     resolution: {integrity: sha512-9z8TZaGM1pfswYeXrUpzPrkx8UnWYdhJclsiYMm6x/w5+nN+8Tf/LnAgfLGQCm59qAOxU8WwHEq2vNwF6i4j+Q==}
 
@@ -4603,8 +4633,8 @@ packages:
     resolution: {integrity: sha512-XGpFGbMLHwSt74YLTKho7Ib242qi6O8MSX+sRokV4oz7iKXvQWGYZthjIhjRGMxjzVkAubBO512dKGYcefmX3Q==}
     engines: {node: '>=6.4.0'}
 
-  core-js-pure@3.41.0:
-    resolution: {integrity: sha512-71Gzp96T9YPk63aUvE5Q5qP+DryB4ZloUZPSOebGM88VNw8VNfvdA7z6kGA8iGOTEzAomsRidp4jXSmUIJsL+Q==}
+  core-js-pure@3.51.0:
+    resolution: {integrity: sha512-NE4SFDJ+qzQeqHG2vVSNwopzS6zZNPYJ5kinIqs+OofTqGzOmICgT89E/yvS9XY7rwb3eU1utWXTJ9nVFqv74A==}
 
   core-util-is@1.0.2:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
@@ -4980,6 +5010,7 @@ packages:
   domexception@4.0.0:
     resolution: {integrity: sha512-A2is4PLG+eeSfoTMA95/s4pvAoSo2mKtiM5jlHkAVewmiO8ISFTFKZjH7UAM1Atli/OT/7JHOrJRJiMKUZKYBw==}
     engines: {node: '>=12'}
+    deprecated: Use your platform's native DOMException instead
 
   domhandler@5.0.3:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
@@ -5253,6 +5284,7 @@ packages:
   eslint@9.24.0:
     resolution: {integrity: sha512-eh/jxIEJyZrvbWRe4XuVclLPDYSYYYgLy5zXGGxD6j8zjSAxFEzI2fL/8xNq6O2yKqVt+eF2YhV+hxjV6UKXwQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -5607,6 +5639,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
@@ -5842,6 +5875,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.3:
     resolution: {integrity: sha512-x00IRNXNy63jwGkJmzPigoySHbaqpNuzKbBOmzK+g2OdZpQ9w+sxCN+VSB3ja7IAge2OP2qpfxTjeNcyjmW1uw==}
@@ -6844,6 +6878,7 @@ packages:
 
   node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
+    deprecated: This package is no longer needed on supported Node.js versions. Node.js 16+ includes AbortController and AbortSignal as built-in globals. All Node.js versions requiring this polyfill are end-of-life. Use the built-in globals instead.
 
   node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
@@ -6851,6 +6886,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -7393,6 +7429,9 @@ packages:
 
   properties-file@3.5.12:
     resolution: {integrity: sha512-7dvf+jph2BoEWv0NskL0RIuBocAzf7R62qvG1K8q5ea8BddjepuwFiLLH1bgQGzSYYNvJHDXonnssd9dZ07RGA==}
+
+  properties-file@3.7.0:
+    resolution: {integrity: sha512-bqVtLPcBjT7/11vRwoVj9J5zWqVXU+JkCPCLrBKKlbbFWLK3+j3ucTibvsO/pvq5lVzws5uUaIPRp7OKgDOcNg==}
 
   proxy-addr@2.0.8:
     resolution: {integrity: sha512-5nnx0yGyVUcY6t9RnWcARWtwT9F1D8O9rt08htPvnd49W1IgZtmLkhu9WfMzQj1cFxjHIO6connUNVW5k7AVyQ==}
@@ -8544,6 +8583,7 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   v8-compile-cache-lib@3.0.1:
@@ -8657,6 +8697,7 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -8809,6 +8850,16 @@ snapshots:
       '@octokit/plugin-paginate-rest': 9.2.2(@octokit/core@5.2.1)
       '@octokit/plugin-rest-endpoint-methods': 10.4.1(@octokit/core@5.2.1)
 
+  '@actions/github@6.0.1':
+    dependencies:
+      '@actions/http-client': 2.2.3
+      '@octokit/core': 5.2.2
+      '@octokit/plugin-paginate-rest': 9.2.2(@octokit/core@5.2.2)
+      '@octokit/plugin-rest-endpoint-methods': 10.4.1(@octokit/core@5.2.2)
+      '@octokit/request': 8.4.1
+      '@octokit/request-error': 5.1.1
+      undici: 5.29.0
+
   '@actions/http-client@2.2.3':
     dependencies:
       tunnel: 0.0.6
@@ -8872,7 +8923,7 @@ snapshots:
       '@babel/helper-validator-option': 7.29.7
       browserslist: 4.28.7
       lru-cache: 5.1.1
-      semver: 6.3.1
+      semver: 6.3.2
 
   '@babel/helper-create-class-features-plugin@7.29.13(@babel/core@7.29.13)':
     dependencies:
@@ -8905,7 +8956,7 @@ snapshots:
       '@babel/core': 7.29.13
       '@babel/helper-annotate-as-pure': 7.29.7
       regexpu-core: 6.4.0
-      semver: 6.3.1
+      semver: 6.3.2
 
   '@babel/helper-define-polyfill-provider@0.6.8(@babel/core@7.29.13)':
     dependencies:
@@ -9496,7 +9547,7 @@ snapshots:
       babel-plugin-polyfill-corejs2: 0.4.17(@babel/core@7.29.13)
       babel-plugin-polyfill-corejs3: 0.11.1(@babel/core@7.29.13)
       babel-plugin-polyfill-regenerator: 0.6.8(@babel/core@7.29.13)
-      semver: 6.3.1
+      semver: 6.3.2
     transitivePeerDependencies:
       - supports-color
 
@@ -9635,7 +9686,7 @@ snapshots:
       babel-plugin-polyfill-corejs3: 0.14.2(@babel/core@7.29.13)
       babel-plugin-polyfill-regenerator: 0.6.8(@babel/core@7.29.13)
       core-js-compat: 3.50.0
-      semver: 6.3.1
+      semver: 6.3.2
     transitivePeerDependencies:
       - supports-color
 
@@ -9669,10 +9720,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/runtime-corejs3@7.27.0':
+  '@babel/runtime-corejs3@7.29.13':
     dependencies:
-      core-js-pure: 3.41.0
-      regenerator-runtime: 0.14.1
+      core-js-pure: 3.51.0
 
   '@babel/runtime@7.27.0':
     dependencies:
@@ -11059,6 +11109,17 @@ snapshots:
     transitivePeerDependencies:
       - '@nx/devkit'
 
+  '@nx-tools/ci-context@6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)':
+    dependencies:
+      '@actions/github': 6.0.1
+      '@nx-tools/core': 6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
+      '@octokit/openapi-types': 22.2.0
+      ci-info: 4.5.0
+      properties-file: 3.7.0
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - '@nx/devkit'
+
   '@nx-tools/container-metadata@6.1.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)':
     dependencies:
       '@nx-tools/ci-context': 6.1.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
@@ -11071,6 +11132,18 @@ snapshots:
       semver: 7.7.1
       tslib: 2.8.1
 
+  '@nx-tools/container-metadata@6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)':
+    dependencies:
+      '@nx-tools/ci-context': 6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
+      '@nx-tools/core': 6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)
+      '@nx/devkit': 22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24)))
+      '@renovate/pep440': 1.0.0
+      csv-parse: 5.6.0
+      handlebars: 4.7.10
+      moment-timezone: 0.5.48
+      semver: 7.8.6
+      tslib: 2.8.1
+
   '@nx-tools/core@6.1.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)':
     dependencies:
       '@actions/exec': 1.1.1
@@ -11078,6 +11151,16 @@ snapshots:
       '@nx/devkit': 22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24)))
       chalk: 4.1.2
       ci-info: 4.2.0
+      csv-parse: 5.6.0
+      tslib: 2.8.1
+
+  '@nx-tools/core@6.9.1(@nx/devkit@22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24))))(tslib@2.8.1)':
+    dependencies:
+      '@actions/exec': 1.1.1
+      '@actions/io': 1.1.3
+      '@nx/devkit': 22.7.12(nx@22.7.12(@swc-node/register@1.12.1(@swc/core@1.16.22(@swc/helpers@0.5.24))(@swc/types@0.1.28)(typescript@5.7.3))(@swc/core@1.16.22(@swc/helpers@0.5.24)))
+      chalk: 4.1.2
+      ci-info: 4.5.0
       csv-parse: 5.6.0
       tslib: 2.8.1
 
@@ -11621,6 +11704,16 @@ snapshots:
       before-after-hook: 2.2.3
       universal-user-agent: 6.0.1
 
+  '@octokit/core@5.2.2':
+    dependencies:
+      '@octokit/auth-token': 4.0.0
+      '@octokit/graphql': 7.1.1
+      '@octokit/request': 8.4.1
+      '@octokit/request-error': 5.1.1
+      '@octokit/types': 13.10.0
+      before-after-hook: 2.2.3
+      universal-user-agent: 6.0.1
+
   '@octokit/endpoint@9.0.6':
     dependencies:
       '@octokit/types': 13.10.0
@@ -11643,9 +11736,19 @@ snapshots:
       '@octokit/core': 5.2.1
       '@octokit/types': 12.6.0
 
+  '@octokit/plugin-paginate-rest@9.2.2(@octokit/core@5.2.2)':
+    dependencies:
+      '@octokit/core': 5.2.2
+      '@octokit/types': 12.6.0
+
   '@octokit/plugin-rest-endpoint-methods@10.4.1(@octokit/core@5.2.1)':
     dependencies:
       '@octokit/core': 5.2.1
+      '@octokit/types': 12.6.0
+
+  '@octokit/plugin-rest-endpoint-methods@10.4.1(@octokit/core@5.2.2)':
+    dependencies:
+      '@octokit/core': 5.2.2
       '@octokit/types': 12.6.0
 
   '@octokit/request-error@5.1.1':
@@ -13282,7 +13385,7 @@ snapshots:
       '@babel/compat-data': 7.29.7
       '@babel/core': 7.29.13
       '@babel/helper-define-polyfill-provider': 0.6.8(@babel/core@7.29.13)
-      semver: 6.3.1
+      semver: 6.3.2
     transitivePeerDependencies:
       - supports-color
 
@@ -13562,6 +13665,8 @@ snapshots:
 
   ci-info@4.2.0: {}
 
+  ci-info@4.5.0: {}
+
   cjs-module-lexer@1.4.3: {}
 
   cjs-module-lexer@2.2.0: {}
@@ -13714,7 +13819,7 @@ snapshots:
     dependencies:
       browserslist: 4.29.5
 
-  core-js-pure@3.41.0: {}
+  core-js-pure@3.51.0: {}
 
   core-util-is@1.0.2: {}
 
@@ -15459,7 +15564,7 @@ snapshots:
       '@babel/parser': 7.29.13
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
-      semver: 6.3.1
+      semver: 6.3.2
     transitivePeerDependencies:
       - supports-color
 
@@ -17225,6 +17330,8 @@ snapshots:
 
   properties-file@3.5.12: {}
 
+  properties-file@3.7.0: {}
+
   proxy-addr@2.0.8:
     dependencies:
       forwarded: 0.2.0
@@ -18765,7 +18872,7 @@ snapshots:
 
   xregexp@4.4.1:
     dependencies:
-      '@babel/runtime-corejs3': 7.27.0
+      '@babel/runtime-corejs3': 7.29.13
 
   y18n@5.0.8: {}
 
